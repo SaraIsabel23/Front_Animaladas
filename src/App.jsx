@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function App() {
+/*function App() {
   const [mensaje, setMensaje] = useState("");
 
   useEffect(() => {
@@ -8,15 +8,33 @@ function App() {
       .then(res => res.text())
       .then(data => setMensaje(data))
       .catch(err => console.error("Error:", err));
-  }, []);
+  }, []);*/
+const App = () => {
+  const [data, setData] = useState(null)
+  const urlApi = import.meta.env.VITE_APP_API_URL || 'http://localhost:3000/'
+  const [update, setUpdate] = useState(false)
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(urlApi)
+      const resData = await response.text()   // ← CAMBIO IMPORTANTE
+      setData(resData)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [update])
 
   return (
     <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
       <h1>Frontend funcionando</h1>
       <p>Respuesta del backend:</p>
-      <strong>{mensaje}</strong>
+      <strong>{data}</strong>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

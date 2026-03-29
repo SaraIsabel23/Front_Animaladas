@@ -1,14 +1,6 @@
 import { useEffect, useState } from "react";
 
-/*function App() {
-  const [mensaje, setMensaje] = useState("");
 
-  useEffect(() => {
-    fetch(import.meta.env.VITE_APP_API_URL)
-      .then(res => res.text())
-      .then(data => setMensaje(data))
-      .catch(err => console.error("Error:", err));
-  }, []);*/
 const App = () => {
   const [data, setData] = useState(null)
   const urlApi = import.meta.env.VITE_APP_API_URL || 'http://localhost:3000/'

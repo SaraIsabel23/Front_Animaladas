@@ -11,12 +11,10 @@
 }
 
 .imageWrapper {
-  position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 16/9;
   overflow: hidden;
   background-color: #f5f5f5;
 }
-
 
 .imageWrapper img {
   width: 100%;
@@ -38,36 +36,28 @@
   padding: var(--spacing-md);
 }
 
-.category {
+.date {
   font-size: 0.75rem;
-  color: var(--color-primary);
-  font-weight: 600;
-  text-transform: uppercase;
+  color: var(--color-text-light);
 }
 
 .info h3 {
   font-family: var(--font-family-display);
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: var(--color-secondary);
   margin: var(--spacing-xs) 0;
+  line-height: 1.4;
 }
 
-.price {
-  font-size: 1.125rem;
-  font-weight: 700;
+.excerpt {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+}
+
+.readMore {
+  font-size: 0.875rem;
   color: var(--color-primary);
-}
-
-.featuredBadge {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background-color: var(--color-white);
-  padding: 6px;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
+  font-weight: 600;
 }

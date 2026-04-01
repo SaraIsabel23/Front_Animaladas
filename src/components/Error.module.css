@@ -1,0 +1,9 @@
+.error {
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.error p {
+  color: var(--color-error);
+  font-weight: 600;
+}

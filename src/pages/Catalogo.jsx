@@ -1,35 +1,50 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { ChevronDown } from 'lucide-react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import ProductCard from '../components/ProductCard';
+import Loading from '../components/Loading';
+import Error from '../components/Error';
+import { getProducts } from '../services/productService';
 import styles from './Catalogo.module.css';
 
-const API_URL = import.meta.env.VITE_APP_API_URL;
+const subcategoriesByCategory = {
+  Perros: ['Alimentacion', 'Snacks', 'Juguetes', 'Higiene', 'Antiparasitarios', 'Camas', 'Paseo', 'Complementos'],
+  Gatos: ['Alimentacion', 'Snacks', 'Juguetes', 'Higiene', 'Antiparasitarios', 'Camas', 'Arenas', 'Complementos'],
+  Pajaros: ['Alimentacion', 'Snacks', 'Jaulas', 'Higiene', 'Complementos'],
+  Roedores: ['Alimentacion', 'Snacks', 'Jaulas', 'Higiene', 'Complementos'],
+  Tortugas: ['Alimentacion', 'Tortugueras', 'Complementos'],
+  Peces: ['Alimentacion', 'Acuarios', 'Complementos']
+};
 
 function Catalogo() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [dropdownOpen, setDropdownOpen] = useState(null);
   
   const categoriaActiva = searchParams.get('categoria') || '';
+  const subcategoriaActiva = searchParams.get('subcategoria') || '';
   const [busqueda, setBusqueda] = useState('');
 
-  const categorias = ['Perros', 'Gatos', 'Pájaros', 'Roedores', 'Peces', 'Tortugas'];
+  const categorias = ['Perros', 'Gatos', 'Pajaros', 'Roedores', 'Peces', 'Tortugas'];
 
   useEffect(() => {
     fetchProducts();
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = () => setDropdownOpen(null);
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
+
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${API_URL}/api/products`);
-      if (!response.ok) {
-        throw new Error('Error al cargar los productos');
-      }
-      const data = await response.json();
+      const data = await getProducts();
       setProducts(data);
     } catch (error) {
       setError(error.message);
@@ -41,9 +56,19 @@ function Catalogo() {
   const filtrarProductos = () => {
     let productosFiltrados = products;
 
+    if(!categoriaActiva && !subcategoriaActiva && !busqueda) {
+        return productosFiltrados.filter((product) => product.featured === true);
+    }
+
     if (categoriaActiva) {
       productosFiltrados = productosFiltrados.filter(
         (product) => product.category === categoriaActiva
+      );
+    }
+
+    if (subcategoriaActiva) {
+      productosFiltrados = productosFiltrados.filter(
+        (product) => product.subcategory === subcategoriaActiva
       );
     }
 
@@ -56,12 +81,30 @@ function Catalogo() {
     return productosFiltrados;
   };
 
-  const handleCategoriaClick = (categoria) => {
-    if (categoria === categoriaActiva) {
-      setSearchParams({});
+  const handleCategoriaClick = (e, categoria) => {
+    e.stopPropagation();
+    if (dropdownOpen === categoria) {
+      setDropdownOpen(null);
     } else {
-      setSearchParams({ categoria });
+      setDropdownOpen(categoria);
     }
+  };
+
+  const handleVerTodos = (e, categoria) => {
+    e.stopPropagation();
+    setSearchParams({ categoria });
+    setDropdownOpen(null);
+  };
+
+  const handleSubcategoriaClick = (e, categoria, subcategoria) => {
+    e.stopPropagation();
+    setSearchParams({ categoria, subcategoria });
+    setDropdownOpen(null);
+  };
+
+  const limpiarFiltros = () => {
+    setSearchParams({});
+    setBusqueda('');
   };
 
   const productosFiltrados = filtrarProductos();
@@ -84,27 +127,67 @@ function Catalogo() {
 
             <div className={styles.categorias}>
               {categorias.map((categoria) => (
-                <button
-                  key={categoria}
-                  onClick={() => handleCategoriaClick(categoria)}
-                  className={`${styles.categoriaBtn} ${
-                    categoriaActiva === categoria ? styles.activa : ''
-                  }`}
-                >
-                  {categoria}
-                </button>
+                <div key={categoria} className={styles.categoriaWrapper}>
+                  <button
+                    onClick={(e) => handleCategoriaClick(e, categoria)}
+                    className={`${styles.categoriaBtn} ${
+                      categoriaActiva === categoria ? styles.activa : ''
+                    }`}
+                  >
+                    {categoria}
+                    <ChevronDown size={16} className={`${styles.chevron} ${dropdownOpen === categoria ? styles.chevronOpen : ''}`} />
+                  </button>
+                  
+                  {dropdownOpen === categoria && (
+                    <div className={styles.dropdown}>
+                      <button 
+                        onClick={(e) => handleVerTodos(e, categoria)}
+                        className={styles.dropdownItem}
+                      >
+                        Ver todos
+                      </button>
+                      {subcategoriesByCategory[categoria].map((sub) => (
+                        <button
+                          key={sub}
+                          onClick={(e) => handleSubcategoriaClick(e, categoria, sub)}
+                          className={`${styles.dropdownItem} ${
+                            subcategoriaActiva === sub ? styles.dropdownItemActiva : ''
+                          }`}
+                        >
+                          {sub}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
+
+            {(categoriaActiva || subcategoriaActiva || busqueda) && (
+              <button onClick={limpiarFiltros} className={styles.limpiarBtn}>
+                Limpiar filtros
+              </button>
+            )}
           </div>
 
-          {loading && <p className={styles.mensaje}>Cargando productos...</p>}
+          {(categoriaActiva || subcategoriaActiva) && (
+            <div className={styles.filtrosActivos}>
+              {categoriaActiva && <span className={styles.tag}>{categoriaActiva}</span>}
+              {subcategoriaActiva && <span className={styles.tag}>{subcategoriaActiva}</span>}
+            </div>
+          )}
+
+          {loading && <Loading message="Cargando productos..." />}
           
-          {error && <p className={styles.error}>{error}</p>}
+          {error && <Error message={error} />}
 
           {!loading && !error && (
             <>
               <p className={styles.resultados}>
-                {productosFiltrados.length} productos encontrados
+                {!categoriaActiva && !subcategoriaActiva && !busqueda
+                  ? 'Productos destacados'
+                  : `${productosFiltrados.length} productos encontrados`
+                  }
               </p>
 
               {productosFiltrados.length === 0 ? (

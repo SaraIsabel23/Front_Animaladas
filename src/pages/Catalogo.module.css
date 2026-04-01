@@ -41,7 +41,14 @@
   flex-wrap: wrap;
 }
 
+.categoriaWrapper {
+  position: relative;
+}
+
 .categoriaBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
   padding: var(--spacing-xs) var(--spacing-md);
   border: 2px solid var(--color-primary);
   border-radius: var(--border-radius);
@@ -60,6 +67,94 @@
 .categoriaBtn.activa {
   background-color: var(--color-primary);
   color: var(--color-white);
+}
+
+.chevron {
+  transition: transform 0.3s;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  background-color: var(--color-white);
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  z-index: 50;
+}
+
+.dropdownItem {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  transition: background-color 0.2s;
+}
+
+.dropdownItem:hover {
+  background-color: var(--color-background);
+}
+
+.dropdownItem:first-child {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.dropdownItem:last-child {
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.dropdownItemActiva {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.dropdownItemActiva:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.limpiarBtn {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  cursor: pointer;
+  font-size: 0.875rem;
+  text-decoration: underline;
+}
+
+.limpiarBtn:hover {
+  color: var(--color-primary);
+}
+
+.filtrosActivos {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.tag {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--border-radius);
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .resultados {

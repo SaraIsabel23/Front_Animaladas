@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom';
+import { Star } from 'lucide-react';
 import styles from './ProductCard.module.css';
 
 function ProductCard({ product }) {
   return (
     <Link to={`/catalogo/${product._id}`} className={styles.card}>
       <div className={styles.imageWrapper}>
+        {product.featured && (
+          <span className={styles.featuredBadge}>
+            <Star size={14} fill="#FFD700" color="#FFD700" />
+          </span>
+        )}
         {product.image ? (
           <img src={product.image} alt={product.name} />
         ) : (

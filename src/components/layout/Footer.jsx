@@ -9,7 +9,7 @@ function Footer() {
 
                 <div className={styles.section}>
                     <h3>ANIMALADAS</h3>
-                    <p>Tu tienda de mascotas de confianza en Vallecas. Más de 10 años cuidando de tus companeros peludos, emplumados y escamosos.</p>
+                    <p>Tu tienda de mascotas de confianza en Vallecas. Más de 10 años cuidando de tus compañeros peludos, emplumados y escamosos.</p>
                     <a
                        href="https://instagram.com/animaladasvallecas"
                        target="_blank"

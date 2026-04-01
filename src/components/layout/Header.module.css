@@ -1,0 +1,113 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.topBar {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.875rem;
+  padding: var(--spacing-xs) 0;
+}
+
+.topBarContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contactInfo {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.contactInfo a,
+.instagram {
+  color: var(--color-white);
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contactInfo a:hover,
+.instagram:hover {
+  opacity: 0.8;
+}
+
+.nav {
+  padding: var(--spacing-md) 0;
+}
+
+.navContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-family-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: 2px;
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+}
+
+.navLinks {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.navLinks a {
+  color: var(--color-secondary);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.navLinks a:hover {
+  color: var(--color-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .topBar {
+    display: none;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navLinksOpen {
+    display: flex;
+  }
+}

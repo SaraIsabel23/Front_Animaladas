@@ -1,0 +1,114 @@
+.hero {
+  background-color: var(--color-background);
+  padding: var(--spacing-xl) var(--spacing-md);
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heroContent {
+  max-width: 550px;
+  text-align: left;
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.heroContent h1 {
+  font-family: var(--font-family-display);
+  font-size: 2.75rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+.heroContent p {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.7;
+}
+
+.heroButtons {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btnPrimary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btnSecondary {
+  background-color: transparent;
+  color: var(--color-secondary);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  border: 2px solid var(--color-secondary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btnSecondary:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.heroImage {
+  flex-shrink: 0;
+}
+
+.heroImage img {
+  width: 500px;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroContent {
+    text-align: center;
+  }
+
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .heroButtons {
+    justify-content: center;
+  }
+
+  .heroImage img {
+    width: 100%;
+    max-width: 400px;
+  }
+}

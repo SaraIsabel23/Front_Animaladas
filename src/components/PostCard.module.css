@@ -1,0 +1,102 @@
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.noImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+
+.type {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.typePerdido {
+  background-color: #FFEBEE;
+  color: #C62828;
+}
+
+.typeEncontrado {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+}
+
+.typeAdopcion {
+  background-color: #E3F2FD;
+  color: #1565C0;
+}
+
+.info {
+  padding: var(--spacing-md);
+}
+
+.date {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+}
+
+.info h3 {
+  font-family: var(--font-family-display);
+  font-size: 1.125rem;
+  color: var(--color-secondary);
+  margin: var(--spacing-xs) 0;
+  line-height: 1.4;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.contact {
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid #e0e0e0;
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: opacity 0.3s;
+}
+
+.contactLink:hover {
+  opacity: 0.8;
+}

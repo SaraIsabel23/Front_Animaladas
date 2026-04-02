@@ -111,3 +111,42 @@
     display: flex;
   }
 }
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  transition: color 0.3s;
+}
+
+.logoutBtn:hover {
+  color: var(--color-primary);
+}
+
+.loginBtn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.loginBtn:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+}

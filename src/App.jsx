@@ -5,6 +5,11 @@ import Catalogo from './pages/Catalogo';
 import ProductDetail from './pages/ProductDetail';
 import Blog from './pages/Blog';
 import ArticleDetail from './pages/ArticleDetail';
+import Tablon from "./pages/Tablon";
+import Register from "./pages/Register";
+import Login from './pages/Login';
+import ProtectedRoute from "./components/ProtectedRoute";
+import NuevoAnuncio from "./pages/NuevoAnuncio";
 
 
 function App() {
@@ -16,6 +21,14 @@ function App() {
           <Route path="/catalogo/:id" element={<ProductDetail />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<ArticleDetail />} />
+          <Route path="/tablon" element={<Tablon />} />
+          <Route path="/tablon/nuevo" element={
+            <ProtectedRoute>
+              <NuevoAnuncio />
+            </ProtectedRoute>
+          } />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
     </BrowserRouter>
 

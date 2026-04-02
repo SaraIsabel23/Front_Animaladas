@@ -1,0 +1,133 @@
+.main {
+  min-height: 60vh;
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: var(--color-background);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-md);
+}
+
+.container h1 {
+  font-family: var(--font-family-display);
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.subtitle {
+  color: var(--color-text-light);
+}
+
+.btnNuevo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.btnNuevo:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.filtros {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.filtroBtn {
+  padding: var(--spacing-xs) var(--spacing-md);
+  border: 2px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  background-color: var(--color-white);
+  color: var(--color-text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filtroPerdido {
+  border-color: #FFCDD2;
+  color: #C62828;
+}
+
+.filtroPerdido:hover,
+.filtroPerdido.activo {
+  background-color: #C62828;
+  border-color: #C62828;
+  color: var(--color-white);
+}
+
+.filtroEncontrado {
+  border-color: #C8E6C9;
+  color: #2E7D32;
+}
+
+.filtroEncontrado:hover,
+.filtroEncontrado.activo {
+  background-color: #2E7D32;
+  border-color: #2E7D32;
+  color: var(--color-white);
+}
+
+.filtroAdopcion {
+  border-color: #BBDEFB;
+  color: #1565C0;
+}
+
+.filtroAdopcion:hover,
+.filtroAdopcion.activo {
+  background-color: #1565C0;
+  border-color: #1565C0;
+  color: var(--color-white);
+}
+
+.resultados {
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.mensaje {
+  text-align: center;
+  color: var(--color-text-light);
+  padding: var(--spacing-xl);
+}
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -31,7 +31,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<ArticleDetail />} />
           <Route path="/tablon" element={<Tablon />} />
-          <Route path="7tablon/:id" element={<PostDetail />} />
+          <Route path="/tablon/:id" element={<PostDetail />} />
           <Route path="/tablon/nuevo" element={
             <ProtectedRoute>
               <NuevoAnuncio />

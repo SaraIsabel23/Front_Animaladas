@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Upload, X } from 'lucide-react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import { useAuth } from '../context/AuthContext';
 import { createPost } from '../services/postService';
+import { uploadImage } from '../services/uploadService';
 import styles from './NuevoAnuncio.module.css';
 
 const tipos = ['Perdido', 'Encontrado', 'Adopcion'];
@@ -13,6 +15,7 @@ function NuevoAnuncio() {
   const navigate = useNavigate();
   const { token } = useAuth();
   const [loading, setLoading] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     title: '',
@@ -31,16 +34,38 @@ function NuevoAnuncio() {
     setError('');
   };
 
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    try {
+      setUploading(true);
+      setError('');
+      const data = await uploadImage(file, token);
+      setFormData({
+        ...formData,
+        image: data.url,
+      });
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const handleRemoveImage = () => {
+    setFormData({
+      ...formData,
+      image: '',
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log('[v0] Token:', token);
-    console.log('[v0 User:', localStorage.getItem('user'));
-    console.log('[v0] Token localStorage:', localStorage.getItem('token'));
-
-    if(!token) {
-        setError('No hay sesión activa. Por favor inicia sesión de nuevo.');
-        return;
+    if (!token) {
+      setError('No hay sesion activa. Por favor inicia sesion de nuevo.');
+      return;
     }
 
     try {
@@ -119,15 +144,37 @@ function NuevoAnuncio() {
               </div>
 
               <div className={styles.field}>
-                <label htmlFor="image">URL de imagen (opcional)</label>
-                <input
-                  type="url"
-                  id="image"
-                  name="image"
-                  value={formData.image}
-                  onChange={handleChange}
-                  placeholder="https://ejemplo.com/imagen.jpg"
-                />
+                <label>Imagen (opcional)</label>
+                {formData.image ? (
+                  <div className={styles.imagePreview}>
+                    <img src={formData.image} alt="Preview" />
+                    <button
+                      type="button"
+                      onClick={handleRemoveImage}
+                      className={styles.removeImageBtn}
+                    >
+                      <X size={20} />
+                    </button>
+                  </div>
+                ) : (
+                  <label className={styles.uploadArea}>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      disabled={uploading}
+                      className={styles.fileInput}
+                    />
+                    {uploading ? (
+                      <span>Subiendo imagen...</span>
+                    ) : (
+                      <>
+                        <Upload size={32} />
+                        <span>Haz click o arrastra una imagen</span>
+                      </>
+                    )}
+                  </label>
+                )}
               </div>
 
               <div className={styles.row}>
@@ -165,7 +212,7 @@ function NuevoAnuncio() {
               <button 
                 type="submit" 
                 className={styles.submitBtn}
-                disabled={loading}
+                disabled={loading || uploading}
               >
                 {loading ? 'Publicando...' : 'Publicar anuncio'}
               </button>

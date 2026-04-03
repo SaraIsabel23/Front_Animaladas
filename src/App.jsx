@@ -6,11 +6,20 @@ import ProductDetail from './pages/ProductDetail';
 import Blog from './pages/Blog';
 import ArticleDetail from './pages/ArticleDetail';
 import Tablon from "./pages/Tablon";
+import NuevoAnuncio from "./pages/NuevoAnuncio";
+import PostDetail from './pages/PostDetail';
 import Register from "./pages/Register";
 import Login from './pages/Login';
-import ProtectedRoute from "./components/ProtectedRoute";
-import NuevoAnuncio from "./pages/NuevoAnuncio";
-
+import Contacto from './pages/Contacto';
+import ProtectedRoute from './components/ProtectedRoute';
+import AdminRoute from './components/AdminRoute';
+import Dashboard from './pages/admin/Dashboard';
+import AdminHome from './pages/admin/AdminHome';
+import AdminProductos from './pages/admin/AdminProductos';
+import AdminProductoForm from './pages/admin/AdminProductoForm';
+import AdminArticulos from './pages/admin/AdminArticulos';
+import AdminArticuloForm from './pages/admin/AdminArticuloForm';
+import AdminPosts from './pages/admin/AdminPosts';
 
 function App() {
   return (
@@ -22,6 +31,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<ArticleDetail />} />
           <Route path="/tablon" element={<Tablon />} />
+          <Route path="7tablon/:id" element={<PostDetail />} />
           <Route path="/tablon/nuevo" element={
             <ProtectedRoute>
               <NuevoAnuncio />
@@ -29,6 +39,22 @@ function App() {
           } />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/contacto" element={<Contacto />} />
+
+          <Route path="/admin" element={
+            <AdminRoute>
+              <Dashboard />
+            </AdminRoute>
+          }>
+            <Route index element={<AdminHome />} />
+            <Route path="productos" element={<AdminProductos />} />
+            <Route parth="productos/nuevo" element={<AdminProductoForm />} />
+            <Route path="productos/editar/:id" element={<AdminProductoForm />} />
+            <Route path="articulos" element={<AdminArticulos />} />
+            <Route path="articulos/nuevo" element={<AdminArticuloForm />} />
+            <Route path="articulos/editar/:id" element={<AdminArticuloForm />} />
+            <Route path="posts" element={<AdminPosts />} />
+          </Route>
         </Routes>
     </BrowserRouter>
 
@@ -36,39 +62,3 @@ function App() {
 };
 
 export default App;
-
-
-
-
-/*import { useEffect, useState } from "react";
-
-
-const App = () => {
-  const [data, setData] = useState(null)
-  const urlApi = import.meta.env.VITE_APP_API_URL || 'http://localhost:3000/'
-  const [update, setUpdate] = useState(false)
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch(urlApi)
-      const resData = await response.text()   // ← CAMBIO IMPORTANTE
-      setData(resData)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [update])
-
-  return (
-    <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1>Frontend funcionando</h1>
-      <p>Respuesta del backend:</p>
-      <strong>{data}</strong>
-    </div>
-  )
-}
-
-export default App*/

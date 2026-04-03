@@ -1,0 +1,159 @@
+.main {
+  min-height: calc(100vh - 200px);
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-background);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-lg);
+  transition: color 0.3s;
+}
+
+.backLink:hover {
+  color: var(--color-primary);
+}
+
+.error {
+  background-color: #FFEBEE;
+  color: #C62828;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-md);
+}
+
+.post {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xl);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.type {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.typePerdido {
+  background-color: #FFEBEE;
+  color: #C62828;
+}
+
+.typeEncontrado {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+}
+
+.typeAdopcion {
+  background-color: #E3F2FD;
+  color: #1565C0;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+
+.post h1 {
+  font-family: var(--font-family-display);
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.imageWrapper {
+  margin-bottom: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.content {
+  margin-bottom: var(--spacing-xl);
+}
+
+.content p {
+  color: var(--color-text);
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.contactCard {
+  background-color: var(--color-background);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+}
+
+.contactCard h3 {
+  font-family: var(--font-family-display);
+  font-size: 1.125rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.contactInfo {
+  margin-bottom: var(--spacing-sm);
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.contactLink:hover {
+  color: var(--color-primary-dark);
+}
+
+.author {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  margin-top: var(--spacing-sm);
+}
+
+@media (max-width: 600px) {
+  .post {
+    padding: var(--spacing-md);
+  }
+
+  .post h1 {
+    font-size: 1.5rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+}

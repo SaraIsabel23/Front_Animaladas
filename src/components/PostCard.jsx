@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Phone, Mail } from 'lucide-react';
 import styles from './PostCard.module.css';
 
@@ -21,7 +22,7 @@ function PostCard({ post }) {
   };
 
   return (
-    <div className={styles.card}>
+    <Link to={`/tablon/${post._id}`} className={styles.card}>
       <div className={styles.imageWrapper}>
         {post.image ? (
           <img src={post.image} alt={post.title} />
@@ -40,19 +41,21 @@ function PostCard({ post }) {
 
         <div className={styles.contact}>
           {post.contact.kind === 'Telefono' ? (
-            <a href={`tel:${post.contact.value}`} className={styles.contactLink}>
+            <span className={styles.contactLink}>
               <Phone size={16} />
               {post.contact.value}
-            </a>
+            </span>
           ) : (
-            <a href={`mailto:${post.contact.value}`} className={styles.contactLink}>
+            <span className={styles.contactLink}>
               <Mail size={16} />
               {post.contact.value}
-            </a>
+            </span>
           )}
         </div>
+
+        <span className={styles.verMas}>Ver detalles</span>
       </div>
-    </div>
+    </Link>
   );
 }
 

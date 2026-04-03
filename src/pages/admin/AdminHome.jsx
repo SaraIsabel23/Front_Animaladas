@@ -1,0 +1,45 @@
+import { Link } from 'react-router-dom';
+import { Package, FileText, Megaphone } from 'lucide-react';
+import styles from './AdminHome.module.css';
+
+function AdminHome() {
+  const cards = [
+    { 
+      path: '/admin/productos', 
+      label: 'Productos', 
+      icon: Package,
+      description: 'Gestiona el catalogo de productos'
+    },
+    { 
+      path: '/admin/articulos', 
+      label: 'Articulos', 
+      icon: FileText,
+      description: 'Crea y edita articulos del blog'
+    },
+    { 
+      path: '/admin/posts', 
+      label: 'Anuncios', 
+      icon: Megaphone,
+      description: 'Modera los anuncios del tablon'
+    },
+  ];
+
+  return (
+    <div className={styles.container}>
+      <h2>Bienvenido al panel de administracion</h2>
+      <p className={styles.subtitle}>Selecciona una seccion para gestionar</p>
+
+      <div className={styles.grid}>
+        {cards.map((card) => (
+          <Link key={card.path} to={card.path} className={styles.card}>
+            <card.icon size={40} className={styles.icon} />
+            <h3>{card.label}</h3>
+            <p>{card.description}</p>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default AdminHome;

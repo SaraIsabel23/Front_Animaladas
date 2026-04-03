@@ -1,13 +1,84 @@
 .main {
-  min-height: calc(100vh - 200px);
-  padding: var(--spacing-xl) 0;
+  min-height: 60vh;
+  padding: var(--spacing-xl) var(--spacing-md);
   background-color: var(--color-background);
 }
 
 .container {
-  max-width: 600px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.header h1 {
+  font-family: var(--font-family-display);
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.header p {
+  color: var(--color-text-light);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+.info {
+  background-color: var(--color-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.info h2 {
+  font-family: var(--font-family-display);
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.infoItem {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.infoItem h3 {
+  font-size: 1rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.infoItem p {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.infoItem a {
+  color: var(--color-primary);
+  transition: opacity 0.3s;
+}
+
+.infoItem a:hover {
+  opacity: 0.8;
+}
+
+.mapa {
+  margin-top: var(--spacing-lg);
 }
 
 .formWrapper {
@@ -17,16 +88,20 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.formWrapper h1 {
+.formWrapper h2 {
   font-family: var(--font-family-display);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: var(--color-secondary);
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-lg);
 }
 
-.subtitle {
-  color: var(--color-text-light);
-  margin-bottom: var(--spacing-lg);
+.success {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-md);
+  font-size: 0.875rem;
 }
 
 .error {
@@ -35,6 +110,7 @@
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius);
   margin-bottom: var(--spacing-md);
+  font-size: 0.875rem;
 }
 
 .form {
@@ -56,7 +132,6 @@
 }
 
 .field input,
-.field select,
 .field textarea {
   width: 100%;
   padding: var(--spacing-sm) var(--spacing-md);
@@ -73,83 +148,20 @@
 }
 
 .field input:focus,
-.field select:focus,
 .field textarea:focus {
   outline: none;
   border-color: var(--color-primary);
 }
 
-.row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-md);
-}
-
-.imagePreview {
-  position: relative;
-  width: fit-content;
-}
-
-.imagePreview img {
-  max-width: 300px;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: var(--border-radius);
-}
-
-.removeImageBtn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.removeImageBtn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.uploadArea {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-xl);
-  border: 2px dashed #e0e0e0;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: border-color 0.3s, background-color 0.3s;
-  color: var(--color-text-light);
-}
-
-.uploadArea:hover {
-  border-color: var(--color-primary);
-  background-color: var(--color-background);
-}
-
-.fileInput {
-  display: none;
-}
-
 .submitBtn {
   width: 100%;
-  padding: var(--spacing-md);
-  border: none;
-  border-radius: var(--border-radius);
   background-color: var(--color-primary);
   color: var(--color-white);
-  font-size: 1rem;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: none;
+  border-radius: var(--border-radius);
   font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
   margin-top: var(--spacing-sm);
@@ -164,8 +176,8 @@
   cursor: not-allowed;
 }
 
-@media (max-width: 600px) {
-  .row {
+@media (max-width: 768px) {
+  .content {
     grid-template-columns: 1fr;
   }
 }

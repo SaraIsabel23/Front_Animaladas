@@ -28,3 +28,19 @@ export const createPost = async (postData, token) => {
 
   return data;
 };
+
+export const deletePost = async (id, token) => {
+  const response = await fetch(`${API_URL}/api/posts/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+    },
+  });
+
+  if (!response.ok) {
+    const data = await response.json();
+    throw new Error(data.message || 'Error al eliminar el anuncio');
+  }
+
+  return true;
+};

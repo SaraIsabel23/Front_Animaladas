@@ -39,21 +39,27 @@ function PostCard({ post }) {
         <h3>{post.title}</h3>
         <p className={styles.description}>{post.description}</p>
 
-        <div className={styles.contact}>
-          {post.contact.kind === 'Telefono' ? (
-            <span className={styles.contactLink}>
-              <Phone size={16} />
-              {post.contact.value}
-            </span>
-          ) : (
-            <span className={styles.contactLink}>
-              <Mail size={16} />
-              {post.contact.value}
-            </span>
+        <div className={styles.footer}>
+          <div className={styles.contact}>
+            {post.contact.kind === 'Telefono' ? (
+              <span className={styles.contactLink}>
+                <Phone size={16} />
+                {post.contact.value}
+              </span>
+            ) : (
+              <span className={styles.contactLink}>
+                <Mail size={16} />
+                {post.contact.value}
+              </span>
+            )}
+          </div>
+          
+          {post.user?.name && (
+            <span className={styles.author}>Por: {post.user.name}</span>
           )}
-        </div>
 
-        <span className={styles.verMas}>Ver detalles</span>
+          <span className={styles.verMas}>Ver detalles</span>
+        </div>
       </div>
     </Link>
   );

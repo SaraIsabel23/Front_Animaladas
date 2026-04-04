@@ -15,7 +15,7 @@ function PostCard({ post }) {
         return styles.typePerdido;
       case 'Encontrado':
         return styles.typeEncontrado;
-      case 'Adopción':
+      case 'Adopcion':
         return styles.typeAdopcion;
       default:
         return '';

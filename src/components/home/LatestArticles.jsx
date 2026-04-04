@@ -16,7 +16,7 @@ function LatestArticles() {
   const fetchArticles = async () => {
     try {
       const data = await getArticles();
-      setArticles(data.slice(0, 3)); // Solo los 3 ultimos
+      setArticles(data.slice(0, 3));
     } catch (error) {
       console.error('Error cargando artículos:', error);
     } finally {
@@ -33,7 +33,7 @@ function LatestArticles() {
       <div className={styles.container}>
         <div className={styles.header}>
           <div>
-            <h2>Ultimos articulos</h2>
+            <h2>Últimos artículos</h2>
             <p>Consejos y novedades para el cuidado de tu mascota</p>
           </div>
           <Link to="/blog" className={styles.verTodos}>

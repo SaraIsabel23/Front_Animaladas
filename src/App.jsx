@@ -21,10 +21,12 @@ import AdminProductoForm from './pages/admin/AdminProductoForm';
 import AdminArticulos from './pages/admin/AdminArticulos';
 import AdminArticuloForm from './pages/admin/AdminArticuloForm';
 import AdminPosts from './pages/admin/AdminPosts';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalogo" element={<Catalogo />} />

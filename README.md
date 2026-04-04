@@ -72,9 +72,10 @@ Front_Animaladas/
 |   |   ├── PostCard.module.css
 |   |   ├── ProductCard.jsx
 |   |   ├── ProductCard.module.css
-|   |   └── ProtectedRoute.jsx
+|   |   ├── ProtectedRoute.jsx
+|   |   └── ScrollToTop.jsx
 │   ├── context/
-│   │   └── AuthContext.jsx│   │  
+│   │   └── AuthContext.jsx  
 │   ├── pages/
 │   │   ├── admin/
 |   |   |   ├── AdminArticuloForm.jsx
@@ -133,28 +134,28 @@ Front_Animaladas/
 
 ## Funcionalidades
 
-### Publicas
+### Públicas
 
-- Pagina de inicio con productos destacados, articulos y anuncios
-- Catalogo de productos con filtros por categoria y subcategoria
-- Blog con articulos sobre mascotas
-- Tablon de anuncios (perdidos, encontrados, adopcion)
-- Pagina de contacto
-- Registro e inicio de sesion
+- Página de inicio con productos destacados, artículos y anuncios
+- Catálogo de productos con filtros por categoría y subcategoría
+- Blog con artículos sobre mascotas
+- Tablón de anuncios (perdidos, encontrados, adopción)
+- Página de contacto
+- Registro e inicio de sesión
 
 
 ### Usuario autenticado
 
-- Publicar anuncios en el tablon
+- Publicar anuncios en el tablón
 - Subir imagenes
 
 
 ### Administrador
 
-- Panel de administracion
+- Panel de administración
 - CRUD completo de productos
 - CRUD completo de articulos
-- Gestion de anuncios del tablon
+- Gestión de anuncios del tablón
 
 #### Demo Admin
 
@@ -175,7 +176,7 @@ Para probar el panel de administracion:
 VITE_APP_API_URL=http://localhost:5000
 ```
 
-### Produccion
+### Producción
 
 ```plaintext
 VITE_APP_API_URL=https://back-animaladas-api.onrender.com
@@ -191,5 +192,6 @@ El frontend esta desplegado en Netlify. El archivo `public/_redirects` maneja la
 
 ## Autora
 
-Sara Isabel del Sastre Ortega
+Sara Isabel del Sastre Ortega.
+
 Desarrollado como proyecto del bootcamp The Bridge.

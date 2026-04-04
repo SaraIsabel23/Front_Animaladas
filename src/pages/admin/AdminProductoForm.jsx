@@ -190,7 +190,7 @@ function AdminProductoForm() {
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="size">Tamano</label>
+              <label htmlFor="size">Tamaño</label>
               <input
                 type="text"
                 id="size"

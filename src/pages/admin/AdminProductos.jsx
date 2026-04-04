@@ -114,7 +114,7 @@ function AdminProductos() {
                   )}
                 </td>
                 <td>{product.size || '-'}</td>
-                <td>{product.price?.toFixed(2)} euros</td>
+                <td>{product.price?.toFixed(2)} €</td>
                 <td>
                   {product.featured && <Star size={18} className={styles.starIcon} />}
                 </td>

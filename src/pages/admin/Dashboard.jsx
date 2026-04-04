@@ -10,7 +10,7 @@ function Dashboard() {
 
   const menuItems = [
     { path: '/admin/productos', label: 'Productos', icon: Package },
-    { path: '/admin/articulos', label: 'Articulos', icon: FileText },
+    { path: '/admin/articulos', label: 'Artículos', icon: FileText },
     { path: '/admin/posts', label: 'Anuncios', icon: Megaphone },
   ];
 

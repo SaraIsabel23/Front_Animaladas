@@ -57,4 +57,12 @@
   .grid {
     grid-template-columns: 1fr;
   }
+
+  .container h2 {
+    font-size: 1.25rem;
+  }
+
+  .card {
+    padding: var(--spacing-md);
+  }
 }

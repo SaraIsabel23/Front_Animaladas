@@ -206,7 +206,37 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-md);
+  }
+
+  .formWrapper {
+    padding: var(--spacing-md);
+  }
+
+  .formWrapper h2 {
+    font-size: 1.25rem;
+  }
+
   .row {
     grid-template-columns: 1fr;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .cancelBtn,
+  .submitBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .imagePreview img {
+    max-width: 100%;
+  }
+
+  .uploadArea {
+    padding: var(--spacing-md);
   }
 }

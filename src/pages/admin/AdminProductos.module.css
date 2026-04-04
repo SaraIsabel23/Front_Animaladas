@@ -173,3 +173,44 @@
   color: var(--color-text-light);
   padding: var(--spacing-xl);
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-md);
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .header h2 {
+    font-size: 1.25rem;
+  }
+
+  .btnNuevo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .searchBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table th,
+  .table td {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.75rem;
+  }
+
+  .productImage {
+    width: 40px;
+    height: 40px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

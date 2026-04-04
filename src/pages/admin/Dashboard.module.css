@@ -143,5 +143,39 @@
   .navItem,
   .logoutBtn {
     justify-content: center;
+    padding: var(--spacing-sm);
+  }
+
+  .header {
+    padding: var(--spacing-md);
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 1.25rem;
+  }
+
+  .content {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .main {
+    margin-left: 60px;
+  }
+
+  .logo {
+    padding: var(--spacing-md);
+  }
+
+  .content {
+    padding: var(--spacing-sm);
   }
 }

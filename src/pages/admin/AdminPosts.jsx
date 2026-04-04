@@ -29,7 +29,7 @@ function AdminPosts() {
   };
 
   const handleDelete = async (id, title) => {
-    if (!confirm(`Estas seguro de eliminar "${title}"?`)) {
+    if (!confirm(`Estás seguro de eliminar "${title}"?`)) {
       return;
     }
 
@@ -55,7 +55,7 @@ function AdminPosts() {
         return styles.typePerdido;
       case 'Encontrado':
         return styles.typeEncontrado;
-      case 'Adopcion':
+      case 'Adopción':
         return styles.typeAdopcion;
       default:
         return '';
@@ -81,7 +81,7 @@ function AdminPosts() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h2>Anuncios del Tablon</h2>
+        <h2>Anuncios del Tablón</h2>
         <span className={styles.count}>{posts.length} anuncios</span>
       </div>
 
@@ -106,7 +106,7 @@ function AdminPosts() {
             <option value="">Todos los tipos</option>
             <option value="Perdido">Perdido</option>
             <option value="Encontrado">Encontrado</option>
-            <option value="Adopcion">Adopcion</option>
+            <option value="Adopcion">Adopción</option>
           </select>
         </div>
       </div>
@@ -166,7 +166,7 @@ function AdminPosts() {
       )}
 
       {posts.length === 0 && !searchTerm && !filterType && (
-        <p className={styles.empty}>No hay anuncios en el tablon.</p>
+        <p className={styles.empty}>No hay anuncios en el tablón.</p>
       )}
     </div>
   );

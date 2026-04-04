@@ -31,12 +31,12 @@ function Register() {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      setError('Las contrasenas no coinciden');
+      setError('Las contraseñas no coinciden');
       return;
     }
 
     if (formData.password.length < 6) {
-      setError('La contrasena debe tener al menos 6 caracteres');
+      setError('La contraseña debe tener al menos 6 caracteres');
       return;
     }
 
@@ -65,7 +65,7 @@ function Register() {
           <div className={styles.formWrapper}>
             <h1>Crear cuenta</h1>
             <p className={styles.subtitle}>
-              Registrate para publicar anuncios en el tablon
+              Regístrate para publicar anuncios en el tablón
             </p>
 
             {error && <p className={styles.error}>{error}</p>}
@@ -110,7 +110,7 @@ function Register() {
               </div>
 
               <div className={styles.field}>
-                <label htmlFor="password">Contrasena</label>
+                <label htmlFor="password">Contraseña</label>
                 <input
                   type="password"
                   id="password"
@@ -122,7 +122,7 @@ function Register() {
               </div>
 
               <div className={styles.field}>
-                <label htmlFor="confirmPassword">Confirmar contrasena</label>
+                <label htmlFor="confirmPassword">Confirmar contraseña</label>
                 <input
                   type="password"
                   id="confirmPassword"
@@ -143,7 +143,7 @@ function Register() {
             </form>
 
             <p className={styles.loginLink}>
-              Ya tienes cuenta? <Link to="/login">Inicia sesion</Link>
+              ¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link>
             </p>
           </div>
         </div>

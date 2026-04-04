@@ -33,8 +33,8 @@ function LatestPosts() {
       <div className={styles.container}>
         <div className={styles.header}>
           <div>
-            <h2>Tablon de anuncios</h2>
-            <p>Mascotas perdidas, encontradas y en adopcion</p>
+            <h2>Tablón de anuncios</h2>
+            <p>Mascotas perdidas, encontradas y en adopción</p>
           </div>
           <Link to="/tablon" className={styles.verTodos}>
             Ver todos

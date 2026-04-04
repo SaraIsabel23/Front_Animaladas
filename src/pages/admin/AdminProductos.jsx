@@ -29,7 +29,7 @@ function AdminProductos() {
   };
 
   const handleDelete = async (id, name) => {
-    if (!confirm(`Estas seguro de eliminar "${name}"?`)) {
+    if (!confirm(`Estás seguro de eliminar "${name}"?`)) {
       return;
     }
 
@@ -69,7 +69,7 @@ function AdminProductos() {
         <Search size={20} className={styles.searchIcon} />
         <input
           type="text"
-          placeholder="Buscar por nombre, categoria, subcategoria o tamano..."
+          placeholder="Buscar por nombre, categoría, subcategoría o tamaño..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className={styles.searchInput}
@@ -89,8 +89,8 @@ function AdminProductos() {
             <tr>
               <th>Imagen</th>
               <th>Nombre</th>
-              <th>Categoria</th>
-              <th>Tamano</th>
+              <th>Categoría</th>
+              <th>Tamaño</th>
               <th>Precio</th>
               <th>Destacado</th>
               <th>Acciones</th>
@@ -144,7 +144,7 @@ function AdminProductos() {
         )}
 
         {products.length === 0 && !searchTerm && (
-          <p className={styles.empty}>No hay productos. Crea el primero!</p>
+          <p className={styles.empty}>No hay productos. ¡Crea el primero!</p>
         )}
       </div>
     </div>

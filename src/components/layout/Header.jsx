@@ -58,9 +58,9 @@ function Header() {
 
                     <ul className={`${styles.navLinks} ${menuOpen ? styles.navLinksOpen : ''}`}>
                         <li><Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
-                        <li><Link to="/catalogo" onClick={() => setMenuOpen(false)}>Catalogo</Link></li>
+                        <li><Link to="/catalogo" onClick={() => setMenuOpen(false)}>Catálogo</Link></li>
                         <li><Link to="/blog" onClick={() => setMenuOpen(false)}>Blog</Link></li>
-                        <li><Link to="/tablon" onClick={() => setMenuOpen(false)}>Tablon de anuncios</Link></li>
+                        <li><Link to="/tablon" onClick={() => setMenuOpen(false)}>Tablón de anuncios</Link></li>
                         <li><Link to="/contacto" onClick={() => setMenuOpen(false)}>Contacto</Link></li>
                         
                         {user ? (
@@ -95,7 +95,7 @@ function Header() {
                               className={styles.loginBtn}
                               onClick={() => setMenuOpen(false)}
                             >
-                              Iniciar sesion
+                              Iniciar sesión
                             </Link>
                           </li>
                         )}

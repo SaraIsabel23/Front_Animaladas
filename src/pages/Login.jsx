@@ -45,7 +45,7 @@ function Login() {
       <main className={styles.main}>
         <div className={styles.container}>
           <div className={styles.formWrapper}>
-            <h1>Iniciar sesion</h1>
+            <h1>Iniciar sesión</h1>
             <p className={styles.subtitle}>
               Accede a tu cuenta para publicar anuncios
             </p>
@@ -66,7 +66,7 @@ function Login() {
               </div>
 
               <div className={styles.field}>
-                <label htmlFor="password">Contrasena</label>
+                <label htmlFor="password">Contraseña</label>
                 <input
                   type="password"
                   id="password"
@@ -82,12 +82,12 @@ function Login() {
                 className={styles.submitBtn}
                 disabled={loading}
               >
-                {loading ? 'Iniciando sesion...' : 'Iniciar sesion'}
+                {loading ? 'Iniciando sesión...' : 'Iniciar sesión'}
               </button>
             </form>
 
             <p className={styles.registerLink}>
-              No tienes cuenta? <Link to="/register">Registrate</Link>
+              ¿No tienes cuenta? <Link to="/register">Regístrate</Link>
             </p>
           </div>
         </div>

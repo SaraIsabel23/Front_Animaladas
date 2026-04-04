@@ -44,14 +44,14 @@ function Dashboard() {
           </Link>
           <button onClick={logout} className={styles.logoutBtn}>
             <LogOut size={20} />
-            Cerrar sesion
+            Cerrar sesión
           </button>
         </div>
       </aside>
 
       <main className={styles.main}>
         <header className={styles.header}>
-          <h1>Panel de Administracion</h1>
+          <h1>Panel de Administración</h1>
           <span className={styles.userName}>Hola, {user?.name}</span>
         </header>
 

@@ -23,7 +23,7 @@ export const createArticle = async (articleData, token) => {
   const data = await response.json();
 
   if (!response.ok) {
-    throw new Error(data.message || 'Error al crear el articulo');
+    throw new Error(data.message || 'Error al crear el artículo');
   }
 
   return data;
@@ -42,7 +42,7 @@ export const updateArticle = async (id, articleData, token) => {
   const data = await response.json();
 
   if (!response.ok) {
-    throw new Error(data.message || 'Error al actualizar el articulo');
+    throw new Error(data.message || 'Error al actualizar el artículo');
   }
 
   return data;
@@ -58,7 +58,7 @@ export const deleteArticle = async (id, token) => {
 
   if (!response.ok) {
     const data = await response.json();
-    throw new Error(data.message || 'Error al eliminar el articulo');
+    throw new Error(data.message || 'Error al eliminar el artículo');
   }
 
   return true;

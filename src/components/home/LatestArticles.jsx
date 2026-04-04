@@ -18,7 +18,7 @@ function LatestArticles() {
       const data = await getArticles();
       setArticles(data.slice(0, 3)); // Solo los 3 ultimos
     } catch (error) {
-      console.error('Error cargando articulos:', error);
+      console.error('Error cargando artículos:', error);
     } finally {
       setLoading(false);
     }

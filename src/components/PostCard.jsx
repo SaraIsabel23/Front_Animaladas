@@ -15,7 +15,7 @@ function PostCard({ post }) {
         return styles.typePerdido;
       case 'Encontrado':
         return styles.typeEncontrado;
-      case 'Adopcion':
+      case 'Adopción':
         return styles.typeAdopcion;
       default:
         return '';
@@ -42,7 +42,7 @@ function PostCard({ post }) {
 
         <div className={styles.footer}>
           <div className={styles.contact}>
-            {post.contact.kind === 'Telefono' ? (
+            {post.contact.kind === 'Teléfono' ? (
               <span className={styles.contactLink}>
                 <Phone size={16} />
                 {post.contact.value}

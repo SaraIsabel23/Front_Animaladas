@@ -28,7 +28,7 @@ function AdminArticulos() {
   };
 
   const handleDelete = async (id, title) => {
-    if (!confirm(`Estas seguro de eliminar "${title}"?`)) {
+    if (!confirm(`Estás seguro de eliminar "${title}"?`)) {
       return;
     }
 
@@ -49,16 +49,16 @@ function AdminArticulos() {
   };
 
   if (loading) {
-    return <Loading message="Cargando articulos..." />;
+    return <Loading message="Cargando artículos..." />;
   }
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h2>Articulos del Blog</h2>
+        <h2>Artículos del Blog</h2>
         <Link to="/admin/articulos/nuevo" className={styles.btnNuevo}>
           <Plus size={20} />
-          Nuevo articulo
+          Nuevo artículo
         </Link>
       </div>
 
@@ -69,7 +69,7 @@ function AdminArticulos() {
           <thead>
             <tr>
               <th>Imagen</th>
-              <th>Titulo</th>
+              <th>Título</th>
               <th>Fecha</th>
               <th>Acciones</th>
             </tr>
@@ -113,7 +113,7 @@ function AdminArticulos() {
         </table>
 
         {articles.length === 0 && (
-          <p className={styles.empty}>No hay articulos. Crea el primero!</p>
+          <p className={styles.empty}>No hay artículos. ¡Crea el primero!</p>
         )}
       </div>
     </div>

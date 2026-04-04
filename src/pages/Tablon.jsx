@@ -72,9 +72,9 @@ function Tablon() {
         <div className={styles.container}>
           <div className={styles.header}>
             <div>
-              <h1>Tablon de anuncios</h1>
+              <h1>Tablón de anuncios</h1>
               <p className={styles.subtitle}>
-                Anuncios de mascotas perdidas, encontradas y en adopcion
+                Anuncios de mascotas perdidas, encontradas y en adopción
               </p>
             </div>
             <Link to="/tablon/nuevo" className={styles.btnNuevo}>

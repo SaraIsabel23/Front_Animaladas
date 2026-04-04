@@ -42,7 +42,7 @@ function PostDetail() {
         return styles.typePerdido;
       case 'Encontrado':
         return styles.typeEncontrado;
-      case 'Adopcion':
+      case 'Adopción':
         return styles.typeAdopcion;
       default:
         return '';
@@ -68,7 +68,7 @@ function PostDetail() {
             <p className={styles.error}>{error || 'Anuncio no encontrado'}</p>
             <Link to="/tablon" className={styles.backLink}>
               <ArrowLeft size={20} />
-              Volver al tablon
+              Volver al tablón
             </Link>
           </div>
         </main>
@@ -84,7 +84,7 @@ function PostDetail() {
         <div className={styles.container}>
           <Link to="/tablon" className={styles.backLink}>
             <ArrowLeft size={20} />
-            Volver al tablon
+            Volver al tablón
           </Link>
 
           <article className={styles.post}>
@@ -111,7 +111,7 @@ function PostDetail() {
             </div>
 
             <div className={styles.contactCard}>
-              <h3>Informacion de contacto</h3>
+              <h3>Información de contacto</h3>
               <div className={styles.contactInfo}>
                 {post.contact?.kind === 'Telefono' ? (
                   <a href={`tel:${post.contact.value}`} className={styles.contactLink}>

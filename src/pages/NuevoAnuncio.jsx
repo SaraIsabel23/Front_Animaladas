@@ -64,7 +64,7 @@ function NuevoAnuncio() {
     e.preventDefault();
 
     if (!token) {
-      setError('No hay sesion activa. Por favor inicia sesion de nuevo.');
+      setError('No hay sesión activa. Por favor inicia sesión de nuevo.');
       return;
     }
 
@@ -96,7 +96,7 @@ function NuevoAnuncio() {
           <div className={styles.formWrapper}>
             <h1>Publicar anuncio</h1>
             <p className={styles.subtitle}>
-              Comparte informacion sobre mascotas perdidas, encontradas o en adopcion
+              Comparte información sobre mascotas perdidas, encontradas o en adopción
             </p>
 
             {error && <p className={styles.error}>{error}</p>}
@@ -137,7 +137,7 @@ function NuevoAnuncio() {
                   name="description"
                   value={formData.description}
                   onChange={handleChange}
-                  placeholder="Describe la mascota, donde se perdio/encontro, caracteristicas..."
+                  placeholder="Describe la mascota, donde se perdio/encontró, caracteristicas..."
                   rows={5}
                   required
                 />

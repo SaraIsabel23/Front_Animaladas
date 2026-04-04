@@ -14,7 +14,7 @@ function Categories() {
   return (
     <section className={styles.categories}>
       <div className={styles.container}>
-        <h2>Nuestras categorias</h2>
+        <h2>Nuestras categorías</h2>
         <p className={styles.subtitle}>Encuentra todo lo que necesitas para tu mascota</p>
         
         <div className={styles.grid}>

@@ -100,24 +100,24 @@ function AdminArticuloForm() {
   };
 
   if (loading) {
-    return <Loading message="Cargando articulo..." />;
+    return <Loading message="Cargando artículo..." />;
   }
 
   return (
     <div className={styles.container}>
       <button onClick={() => navigate('/admin/articulos')} className={styles.backBtn}>
         <ArrowLeft size={20} />
-        Volver a articulos
+        Volver a artículos
       </button>
 
       <div className={styles.formWrapper}>
-        <h2>{isEditing ? 'Editar articulo' : 'Nuevo articulo'}</h2>
+        <h2>{isEditing ? 'Editar artículo' : 'Nuevo artículo'}</h2>
 
         {error && <p className={styles.error}>{error}</p>}
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.field}>
-            <label htmlFor="title">Titulo</label>
+            <label htmlFor="title">Título</label>
             <input
               type="text"
               id="title"

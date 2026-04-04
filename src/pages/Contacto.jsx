@@ -28,7 +28,7 @@ function Contacto() {
     setLoading(true);
     
     
-    // Simular envio (aqui puedes conectar con un backend o servicio de email)
+    // Simular envio (conectar más adelante con el backend y a la vez que me llegue a mi mail)
     setTimeout(() => {
       setLoading(false);
       setSuccess(true);
@@ -43,17 +43,17 @@ function Contacto() {
         <div className={styles.container}>
           <div className={styles.header}>
             <h1>Contacto</h1>
-            <p>Estamos aqui para ayudarte. Contacta con nosotros!</p>
+            <p>Estamos aquí para ayudarte. ¡Contacta con nosotros!</p>
           </div>
 
           <div className={styles.content}>
             <div className={styles.info}>
-              <h2>Informacion de contacto</h2>
+              <h2>Información de contacto</h2>
               
               <div className={styles.infoItem}>
                 <MapPin size={24} className={styles.icon} />
                 <div>
-                  <h3>Direccion</h3>
+                  <h3>Dirección</h3>
                   <p>Calle Calero Pita 54</p>
                   <p>28053 Madrid (Vallecas)</p>
                 </div>
@@ -62,7 +62,7 @@ function Contacto() {
               <div className={styles.infoItem}>
                 <Phone size={24} className={styles.icon} />
                 <div>
-                  <h3>Telefono</h3>
+                  <h3>Teléfono</h3>
                   <p><a href="tel:910850848">91 085 08 48</a></p>
                 </div>
               </div>
@@ -80,7 +80,7 @@ function Contacto() {
                 <div>
                   <h3>Horario</h3>
                   <p>Lunes a Viernes: 10:00 - 14:00 / 17:00 - 20:00</p>
-                  <p>Sabados: 10:00 - 14:00</p>
+                  <p>Sábados: 10:00 - 14:00</p>
                   <p>Domingos y tercer sábado de mes: Cerrado</p>
                 </div>
               </div>
@@ -100,11 +100,11 @@ function Contacto() {
             </div>
 
             <div className={styles.formWrapper}>
-              <h2>Envianos un mensaje</h2>
+              <h2>Envíanos un mensaje</h2>
 
               {success && (
                 <p className={styles.success}>
-                  Mensaje enviado correctamente. Te responderemos pronto!
+                  Mensaje enviado correctamente. ¡Te responderemos pronto!
                 </p>
               )}
 

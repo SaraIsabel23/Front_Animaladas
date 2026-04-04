@@ -58,7 +58,7 @@ function Blog() {
           {!loading && !error && (
             <>
               {articles.length === 0 ? (
-                <p className={styles.mensaje}>No hay articulos publicados</p>
+                <p className={styles.mensaje}>No hay artículos publicados</p>
               ) : (
                 <>
                   <div className={styles.grid}>

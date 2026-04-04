@@ -163,7 +163,7 @@ function AdminProductoForm() {
           </div>
 
           <div className={styles.field}>
-            <label htmlFor="description">Descripcion</label>
+            <label htmlFor="description">Descripción</label>
             <textarea
               id="description"
               name="description"
@@ -202,7 +202,7 @@ function AdminProductoForm() {
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="category">Categoria</label>
+              <label htmlFor="category">Categoría</label>
               <select
                 id="category"
                 name="category"
@@ -217,14 +217,14 @@ function AdminProductoForm() {
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="subcategory">Subcategoria</label>
+              <label htmlFor="subcategory">Subcategoría</label>
               <select
                 id="subcategory"
                 name="subcategory"
                 value={formData.subcategory}
                 onChange={handleChange}
               >
-                <option value="">Sin subcategoria</option>
+                <option value="">Sin subcategoría</option>
                 {subcategoriasPorCategoria[formData.category]?.map((sub) => (
                   <option key={sub} value={sub}>{sub}</option>
                 ))}

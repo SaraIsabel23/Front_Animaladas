@@ -22,7 +22,7 @@ function ArticleCard({ article }) {
         <p className={styles.excerpt}>
           {article.content.substring(0, 120)}...
         </p>
-        <span className={styles.readMore}>Leer mas</span>
+        <span className={styles.readMore}>Leer más</span>
       </div>
     </Link>
   );

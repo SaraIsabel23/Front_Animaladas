@@ -130,7 +130,7 @@ function Catalogo() {
       <Header />
       <main className={styles.main}>
         <div className={styles.container}>
-          <h1>Catalogo</h1>
+          <h1>Catálogo</h1>
 
           <div className={styles.filtros}>
             <input

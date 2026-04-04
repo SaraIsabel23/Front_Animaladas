@@ -14,20 +14,20 @@ function AdminHome() {
       path: '/admin/articulos', 
       label: 'Artículos', 
       icon: FileText,
-      description: 'Crea y edita articulos del blog'
+      description: 'Crea y edita artículos del blog'
     },
     { 
       path: '/admin/posts', 
       label: 'Anuncios', 
       icon: Megaphone,
-      description: 'Modera los anuncios del tablon'
+      description: 'Modera los anuncios del tablón'
     },
   ];
 
   return (
     <div className={styles.container}>
       <h2>Bienvenido al panel de administración</h2>
-      <p className={styles.subtitle}>Selecciona una seccion para gestionar</p>
+      <p className={styles.subtitle}>Selecciona una sección para gestionar</p>
 
       <div className={styles.grid}>
         {cards.map((card) => (

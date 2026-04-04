@@ -12,7 +12,7 @@ function AdminHome() {
     },
     { 
       path: '/admin/articulos', 
-      label: 'Articulos', 
+      label: 'Artículos', 
       icon: FileText,
       description: 'Crea y edita articulos del blog'
     },
@@ -26,7 +26,7 @@ function AdminHome() {
 
   return (
     <div className={styles.container}>
-      <h2>Bienvenido al panel de administracion</h2>
+      <h2>Bienvenido al panel de administración</h2>
       <p className={styles.subtitle}>Selecciona una seccion para gestionar</p>
 
       <div className={styles.grid}>

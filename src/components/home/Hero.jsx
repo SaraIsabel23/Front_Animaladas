@@ -6,7 +6,7 @@ function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.heroContent}>
-        <span className={styles.badge}>Más de 10 años en Vallecas</span>
+        <span className={styles.badge}>Más de 10 años de experiencia</span>
         <h1>Todo lo que tu mascota necesita</h1>
         <p>En Animaladas encontraras alimentación, juguetes, accesorios y mucho mas para perros, gatos, pájaros, roedores, peces y tortugas. Tu tienda de confianza en el barrio.</p>
         

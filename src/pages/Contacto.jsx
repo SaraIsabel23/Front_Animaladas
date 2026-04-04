@@ -27,6 +27,7 @@ function Contacto() {
     e.preventDefault();
     setLoading(true);
     
+    
     // Simular envio (aqui puedes conectar con un backend o servicio de email)
     setTimeout(() => {
       setLoading(false);

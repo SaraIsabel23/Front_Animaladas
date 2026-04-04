@@ -4,11 +4,13 @@ import { Plus } from 'lucide-react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import PostCard from '../components/PostCard';
+import Pagination from '../components/Pagination';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import { getPosts } from '../services/postService';
 import styles from './Tablon.module.css';
 
+const ITEMS_PER_PAGE = 6;
 const tipos = ['Perdido', 'Encontrado', 'Adopcion'];
 
 function Tablon() {
@@ -16,10 +18,15 @@ function Tablon() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [tipoActivo, setTipoActivo] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     fetchPosts();
   }, []);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [tipoActivo]);
 
   const fetchPosts = async () => {
     try {
@@ -49,6 +56,14 @@ function Tablon() {
   };
 
   const postsFiltrados = filtrarPosts();
+  const totalPages = Math.ceil(postsFiltrados.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const paginatedPosts = postsFiltrados.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div>
@@ -95,11 +110,19 @@ function Tablon() {
               {postsFiltrados.length === 0 ? (
                 <p className={styles.mensaje}>No hay anuncios publicados</p>
               ) : (
-                <div className={styles.grid}>
-                  {postsFiltrados.map((post) => (
-                    <PostCard key={post._id} post={post} />
-                  ))}
-                </div>
+                <>
+                  <div className={styles.grid}>
+                    {paginatedPosts.map((post) => (
+                      <PostCard key={post._id} post={post} />
+                    ))}
+                  </div>
+
+                  <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={handlePageChange}
+                  />
+                </>
               )}
             </>
           )}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Phone, Mail, User, LogOut } from 'lucide-react';
+import { Phone, Mail, User, LogOut, Settings } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import styles from './Header.module.css';
 
@@ -65,6 +65,18 @@ function Header() {
                         
                         {user ? (
                           <>
+                            {user.role === 'admin' && (
+                              <li>
+                                <Link 
+                                  to="/admin" 
+                                  className={styles.adminBtn}
+                                  onClick={() => setMenuOpen(false)}
+                                >
+                                  <Settings size={16} />
+                                  Admin
+                                </Link>
+                              </li>
+                            )}
                             <li className={styles.userInfo}>
                               <User size={16} />
                               {user.name}

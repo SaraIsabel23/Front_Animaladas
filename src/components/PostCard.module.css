@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
 }
 
 .card:hover {
@@ -17,12 +18,20 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.imageWrapper {
+/*.imageWrapper {
   position: relative;
   width: 100%;
   height: 200px;
   overflow: hidden;
   background-color: var(--color-background);
+}*/
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  padding: var(--spacing-md); /* 👈 aire alrededor */
+  box-sizing: border-box;
 }
 
 .imageWrapper img {
@@ -30,6 +39,8 @@
   height: 100%;
   object-fit: contain;
   object-position: center;
+  border-radius: var(--border-radius); /* 👈 bordes suaves */
+  background-color: var(--color-background);
 }
 
 .noImage {
@@ -77,9 +88,11 @@
 }
 
 .date {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
   font-size: 0.75rem;
   color: var(--color-text-light);
-  margin-bottom: var(--spacing-xs);
 }
 
 .info h3 {
@@ -95,7 +108,7 @@
   color: var(--color-text-light);
   line-height: 1.5;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   flex: 1;
@@ -119,7 +132,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
-  color: var(--color-text);
+  color: var(--color-primary);
   font-size: 0.875rem;
 }
 

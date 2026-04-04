@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from './pages/Home';
@@ -48,7 +49,7 @@ function App() {
           }>
             <Route index element={<AdminHome />} />
             <Route path="productos" element={<AdminProductos />} />
-            <Route parth="productos/nuevo" element={<AdminProductoForm />} />
+            <Route path="productos/nuevo" element={<AdminProductoForm />} />
             <Route path="productos/editar/:id" element={<AdminProductoForm />} />
             <Route path="articulos" element={<AdminArticulos />} />
             <Route path="articulos/nuevo" element={<AdminArticuloForm />} />

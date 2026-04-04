@@ -137,6 +137,24 @@
   color: var(--color-primary);
 }
 
+.adminBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background-color: var(--color-secondary);
+  color: var(--color-white) !important;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 0.75rem;
+  transition: background-color 0.3s;
+}
+
+.adminBtn:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white) !important;
+}
+
 .loginBtn {
   background-color: var(--color-primary);
   color: var(--color-white);

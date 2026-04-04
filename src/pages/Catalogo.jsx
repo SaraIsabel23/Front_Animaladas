@@ -4,10 +4,13 @@ import { ChevronDown } from 'lucide-react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import ProductCard from '../components/ProductCard';
+import Pagination from '../components/Pagination';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import { getProducts } from '../services/productService';
 import styles from './Catalogo.module.css';
+
+const ITEMS_PER_PAGE = 12;
 
 const subcategoriesByCategory = {
   Perros: ['Alimentacion', 'Snacks', 'Juguetes', 'Higiene', 'Antiparasitarios', 'Camas', 'Paseo', 'Complementos'],
@@ -24,6 +27,7 @@ function Catalogo() {
   const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const [dropdownOpen, setDropdownOpen] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
   
   const categoriaActiva = searchParams.get('categoria') || '';
   const subcategoriaActiva = searchParams.get('subcategoria') || '';
@@ -34,6 +38,10 @@ function Catalogo() {
   useEffect(() => {
     fetchProducts();
   }, []);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [categoriaActiva, subcategoriaActiva, busqueda]);
 
   useEffect(() => {
     const handleClickOutside = () => setDropdownOpen(null);
@@ -108,13 +116,21 @@ function Catalogo() {
   };
 
   const productosFiltrados = filtrarProductos();
+  const totalPages = Math.ceil(productosFiltrados.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const paginatedProducts = productosFiltrados.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div>
       <Header />
       <main className={styles.main}>
         <div className={styles.container}>
-          <h1>Catálogo</h1>
+          <h1>Catalogo</h1>
 
           <div className={styles.filtros}>
             <input
@@ -187,17 +203,25 @@ function Catalogo() {
                 {!categoriaActiva && !subcategoriaActiva && !busqueda
                   ? 'Productos destacados'
                   : `${productosFiltrados.length} productos encontrados`
-                  }
+                }
               </p>
 
               {productosFiltrados.length === 0 ? (
                 <p className={styles.mensaje}>No hay productos disponibles</p>
               ) : (
-                <div className={styles.grid}>
-                  {productosFiltrados.map((product) => (
-                    <ProductCard key={product._id} product={product} />
-                  ))}
-                </div>
+                <>
+                  <div className={styles.grid}>
+                    {paginatedProducts.map((product) => (
+                      <ProductCard key={product._id} product={product} />
+                    ))}
+                  </div>
+
+                  <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={handlePageChange}
+                  />
+                </>
               )}
             </>
           )}

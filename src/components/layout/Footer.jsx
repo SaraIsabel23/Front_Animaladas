@@ -24,7 +24,7 @@ function Footer() {
                 </div>
 
                 <div className={styles.section}>
-                    <h4>Enlaces</h4>
+                    <h4>Secciones</h4>
                     <ul>
                         <li><Link to="/">Inicio</Link></li>
                         <li><Link to="/catalogo">Catálogo</Link></li>
@@ -55,19 +55,19 @@ function Footer() {
                         </li>
                         <li>
                             <Phone size={16} />
-                            <a href="tel:910850848">91 085 08 48</a>
+                            <span>91 085 08 48</span>
                         </li>
                         <li>
                             <Mail size={16} />
-                            <a href="mailto:animaladas2016@gmail.com">animaladas2016@gmail.com</a>
+                            <span>animaladas2016@gmail.com</span>
                         </li>
                         <li>
                             <Clock size={16} />
                             <div className={styles.hours}>
-                              <span>-Lunes - Viernes:</span>
+                              <span><strong className={styles.dayLabel}>Lunes - Viernes:</strong></span>
                               <span>10:00 - 14:00 y 17:00 - 20:00</span>
-                              <span>-Sábados: 10:00 - 14:00.</span>
-                              <span>Domingos y tercer sábado del mes:  Cerrado</span>
+                              <span><strong className={styles.dayLabel}>Sábados:</strong> 10:00 - 14:00.</span>
+                              <span><strong className={styles.dayLabel}>Domingos y tercer sábado del mes:</strong>  Cerrado</span>
                             </div>
                         </li>
                     </ul>
@@ -83,3 +83,6 @@ function Footer() {
 };
 
 export default Footer;
+
+
+

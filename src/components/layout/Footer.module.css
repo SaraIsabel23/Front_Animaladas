@@ -54,16 +54,17 @@
   font-size: 0.875rem;
 }
 
-.instagramLink {
+.section .instagramLink {
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-primary);
   margin-top: var(--spacing-sm);
 }
 
-.instagramLink:hover {
-  color: var(--color-primary);
+.section .instagramLink:hover {
+  color: var(--color-primary-dark);
+  opacity: 0.8;
 }
 
 .contactList li {
@@ -87,6 +88,13 @@
 .hours span {
   font-size: 0.875rem;
   line-height: 1.4;
+}
+
+.dayLabel {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
 }
 
 .footerBottom {

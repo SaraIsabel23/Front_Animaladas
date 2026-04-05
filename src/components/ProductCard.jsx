@@ -9,6 +9,7 @@ function ProductCard({ product }) {
         {product.featured && (
           <span className={styles.featuredBadge}>
             <Star size={14} fill="#FFD700" color="#FFD700" />
+            <span className={styles.tooltip}>Producto destacado</span>
           </span>
         )}
         {product.image ? (

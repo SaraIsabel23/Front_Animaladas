@@ -27,6 +27,12 @@
   gap: var(--spacing-md);
 }
 
+.contactInfo li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .contactInfo a,
 .instagram {
   color: var(--color-white);

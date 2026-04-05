@@ -8,7 +8,7 @@ function AdminHome() {
       path: '/admin/productos', 
       label: 'Productos', 
       icon: Package,
-      description: 'Gestiona el catalogo de productos'
+      description: 'Gestiona el catálogo de productos'
     },
     { 
       path: '/admin/articulos', 

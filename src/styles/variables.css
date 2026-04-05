@@ -11,7 +11,7 @@
   --color-success: #388E3C;
 
   --font-family: 'Nunito', sans-serif;
-  --font-family-display: 'Fredoka', sans-serif;
+  --font-family-display: 'Inter', sans-serif;
 
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -21,3 +21,6 @@
 
   --border-radius: 8px;
 }
+
+
+

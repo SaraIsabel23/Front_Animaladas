@@ -19,16 +19,16 @@ function Header() {
         <header className={styles.header}>
             <div className={styles.topBar}>
                 <div className={styles.topBarContent}>
-                    <div className={styles.contactInfo}>
-                        <a href="tel:910850848">
+                    <ul className={styles.contactInfo}>
+                        <li>
                             <Phone size={14} />
                             91 085 08 48
-                        </a>
-                        <a href="mailto:animaladas2016@gmail.com">
+                        </li>
+                        <li>
                             <Mail size={14} />
                             animaladas2016@gmail.com
-                        </a>
-                    </div>
+                        </li>
+                    </ul>
                     <a
                       href="https://instagram.com/animaladasvallecas"
                       target="_blank"

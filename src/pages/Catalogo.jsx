@@ -10,7 +10,7 @@ import Error from '../components/Error';
 import { getProducts } from '../services/productService';
 import styles from './Catalogo.module.css';
 
-const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 8;
 
 const subcategoriesByCategory = {
   Perros: ['Alimentacion', 'Snacks', 'Juguetes', 'Higiene', 'Antiparasitarios', 'Camas', 'Paseo', 'Complementos'],

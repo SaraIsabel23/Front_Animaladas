@@ -37,6 +37,7 @@ function AdminProductoForm() {
     subcategory: '',
     image: '',
     featured: false,
+    stock: 0,
   });
 
   useEffect(() => {
@@ -57,6 +58,7 @@ function AdminProductoForm() {
         subcategory: product.subcategory || '',
         image: product.image || '',
         featured: product.featured || false,
+        stock: product.stock || 0,
       });
     } catch (error) {
       setError(error.message);
@@ -117,6 +119,7 @@ function AdminProductoForm() {
       const productData = {
         ...formData,
         price: parseFloat(formData.price),
+        stock: parseInt(formData.stock, 10),
       };
 
       if (isEditing) {
@@ -229,6 +232,19 @@ function AdminProductoForm() {
                   <option key={sub} value={sub}>{sub}</option>
                 ))}
               </select>
+            </div>
+
+            <div className={styles.field}>
+              <laber htmlFor="stock">Stock</laber>
+              <input
+                type="number"
+                id="stock"
+                name="stock"
+                value={formData.stock}
+                onChange={handleChange}
+                min="0"
+                required
+                />
             </div>
           </div>
 

@@ -4,7 +4,7 @@ import styles from './Categories.module.css';
 const categories = [
   { name: 'Perros', emoji: '🐕', color: '#8B4513' },
   { name: 'Gatos', emoji: '🐱', color: '#FF8C00' },
-  { name: 'Pájaros', emoji: '🦜', color: '#32CD32' },
+  { name: 'Pajaros', emoji: '🦜', color: '#32CD32' },
   { name: 'Roedores', emoji: '🐹', color: '#DEB887' },
   { name: 'Peces', emoji: '🐠', color: '#1E90FF' },
   { name: 'Tortugas', emoji: '🐢', color: '#2E8B57' }

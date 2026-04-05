@@ -18,19 +18,11 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-/*.imageWrapper {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  background-color: var(--color-background);
-}*/
-
 .imageWrapper {
   position: relative;
   width: 100%;
   height: 200px;
-  padding: var(--spacing-md); /* 👈 aire alrededor */
+  padding: var(--spacing-md);
   box-sizing: border-box;
 }
 
@@ -39,7 +31,7 @@
   height: 100%;
   object-fit: contain;
   object-position: center;
-  border-radius: var(--border-radius); /* 👈 bordes suaves */
+  border-radius: var(--border-radius);
   background-color: var(--color-background);
 }
 
@@ -88,11 +80,10 @@
 }
 
 .date {
-  position: absolute;
-  top: var(--spacing-md);
-  right: var(--spacing-md);
   font-size: 0.75rem;
   color: var(--color-text-light);
+  margin-bottom: var(--spacing-xs);
+  text-align: right;
 }
 
 .info h3 {

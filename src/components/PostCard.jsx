@@ -42,7 +42,7 @@ function PostCard({ post }) {
 
         <div className={styles.footer}>
           <div className={styles.contact}>
-            {post.contact.kind === 'Teléfono' ? (
+            {post.contact.kind === 'Telefono' ? (
               <span className={styles.contactLink}>
                 <Phone size={16} />
                 {post.contact.value}

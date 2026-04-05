@@ -63,7 +63,7 @@ function Contacto() {
                 <Phone size={24} className={styles.icon} />
                 <div>
                   <h3>Teléfono</h3>
-                  <p><a href="tel:910850848">91 085 08 48</a></p>
+                  <p>91 085 08 48</p>
                 </div>
               </div>
 
@@ -71,7 +71,7 @@ function Contacto() {
                 <Mail size={24} className={styles.icon} />
                 <div>
                   <h3>Email</h3>
-                  <p><a href="mailto:animaladas2016@gmail.com">animaladas2016@gmail.com</a></p>
+                  <p>animaladas2016@gmail.com</p>
                 </div>
               </div>
 
